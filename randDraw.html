@@ -1,0 +1,75 @@
+<!-- ovo ce izvlaciti tarot random -->
+
+<html>
+
+<head>
+
+  <style> 
+  canvas {
+    background:rgb(150,150,150);
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  /* Style the button */
+  button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 30px;
+    width: 200px;
+    left: 50%;
+    top: 90%;
+    margin-top: -15px;   /* = -height / 2   */
+    margin-left: -100px; /* = -width / 2    */
+    position: fixed;     /* Fixed is better */
+
+  }     
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+  </style>
+
+</head>
+
+<body>
+    <center><h1> Turbo tarot </h1></center>
+    <button id="draw_button" onclick="drawing()">Pritisni da izvučeš kartu</button>
+
+ <div></div>
+
+ <script> 
+
+// random funkcija
+
+var turboTarot = new Array("images/10.png", "images/10_naopake.png", "images/11.png", "images/11_naopake.png", "images/12.png", 
+"images/12_naopake.png", "images/13.png", "images/13_naopake.png", "images/14.png", "images/14_naopake.png", "images/15.png", 
+"images/15_naopake.png", "images/16.png", "images/16_naopake.png", "images/17.png", "images/17_naopake.png", "images/18.png", 
+"images/18_naopake.png", "images/19.png", "images/19_naopake.png", "images/2.png", "images/20.png", "images/20_naopake.png", "images/21.png", "images/21_naopake.png", 
+"images/22.png", "images/22_naopake.png", "images/23.png", "images/23_naopake.png", "images/2_naopake.png", "images/3.png", "images/3_naopake.png", "images/4.png", "images/4_naopake.png", 
+"images/5.png", "images/5_naopake.png", "images/6.png", "images/6_naopake.png", "images/7.png", "images/7_naopake.png", "images/8.png", "images/8_naopake.png", 
+"images/9.png", "images/9_naopake.png");
+
+function drawing(){
+    var randomNum = Math.floor(Math.random() * turboTarot.length);
+    document.getElementById("myPicture").style.visibility='visible';
+    document.getElementById("myPicture").src = turboTarot[randomNum];
+};
+
+</script>
+
+<img src="myPicture" id="myPicture" alt="some image" class="center" style="visibility: hidden;">
+
+</body>
+
+</html>
